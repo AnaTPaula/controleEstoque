@@ -1,0 +1,88 @@
+/*cria o generator gen_id_usuario */
+CREATE GENERATOR GEN_ID_USUARIO;
+
+/* cria o generator gen_id_cliente */
+CREATE GENERATOR GEN_ID_CLIENTE;
+
+/* cria o generator gen_id_fornecedor */
+CREATE GENERATOR GEN_ID_FORNECEDOR;
+
+/* cria o generator gem_id_empresa*/
+CREATE GENERATOR GEN_ID_EMPRESA;
+
+/* cria a generator gen_id_forma_pgto*/
+CREATE GENERATOR GEN_ID_FORMA_PGTO;
+
+/* cria o generator gen_id_compra */
+CREATE GENERATOR GEN_ID_COMPRA;
+
+/* cria o generator gen_id_venda */
+CREATE GENERATOR GEN_ID_VENDA;
+
+
+/* cria a trigger insere usuario*/
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_USUARIO FOR USUARIO ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_USUARIO=gen_id(GEN_ID_USUARIO,1);
+END^
+SET TERM ; ^
+
+
+/* cria a trigger insere cliente */
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_CLIENTE FOR CLIENTE ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_CLIENTE=gen_id(GEN_ID_CLIENTE,1);
+END^
+SET TERM ; ^
+
+
+/* cria  a trigger insere fornecedor*/
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_FORNECEDOR FOR FORNECEDOR ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_FORNECEDOR=gen_id(GEN_ID_FORNECEDOR,1);
+END^
+SET TERM ; ^
+
+
+/* cria  a trigger insere forma de pagamento */
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_FORMA_PGTO FOR FORMA_PGTO ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_FORMA_PGTO=gen_id(GEN_ID_FORMA_PGTO,1);
+END^
+SET TERM ; ^
+
+/* cria a trigger insere compra */
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_COMPRA FOR COMPRA ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_COMPRA=gen_id(GEN_ID_COMPRA,1);
+END^
+SET TERM ; ^
+
+/* cria a trigger insere venda */
+
+SET TERM ^ ;
+CREATE TRIGGER INSERE_ID_COMPRA FOR COMPRA ACTIVE
+BEFORE INSERT POSITION 0
+AS 
+BEGIN 
+    NEW.ID_COMPRA=gen_id(GEN_ID_COMPRA,1);
+END^
+SET TERM ; ^
+
+
+
