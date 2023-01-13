@@ -1339,9 +1339,9 @@ object Form_Principal: TForm_Principal
   end
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 350
+    Top = 356
     Width = 1217
-    Height = 25
+    Height = 19
     Panels = <
       item
         Width = 150
@@ -1352,7 +1352,6 @@ object Form_Principal: TForm_Principal
       item
         Width = 150
       end>
-    ExplicitTop = 325
   end
   object Timer1: TTimer
     OnTimer = Timer1Timer
